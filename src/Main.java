@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Scanner key = new Scanner(System.in);
+
+        int firstAns;
+        int secondAns;
+        boolean validInput = false;
+
+        System.out.println("== Welcome to MultiSort ==");
+
+        while(!validInput)
+        {
+            System.out.println("1. Sort numbers");
+            System.out.println("2. Sort words");
+            System.out.println("3. Sort sentence length");
+
+            try
+            {
+               firstAns = key.nextInt();
+               if(firstAns>0 && firstAns<4)
+                   validInput = true;
+               else
+                   System.out.println("Enter 1, 2, or 3");
+            }
+            catch(Exception e)
+            {
+                System.out.println("Invalid input detected enter a number.");
+                key.next();
+            }
         }
+
+
+
     }
 }
